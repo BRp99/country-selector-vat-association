@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 //https://www.avalara.com/vatlive/en/eu-vat-rules/eu-vat-number-registration/eu-vat-number-formats.html
 //e também por este site para dupla verificação: https://laendercode.net/de/
 
-const europeanCountrys = [
+const europeanCountries = [
   {
     id: 1,
     nome: "Áustria",
@@ -131,7 +131,7 @@ export default function CountrySelector() {
 
   useEffect(() => {
     const normalizedQuery = normalizeString(searchQuery)
-    const filtered = europeanCountrys.filter(
+    const filtered = europeanCountries.filter(
       (country) => normalizeString(country.nome).includes(normalizedQuery) || normalizeString(country.codigoISOAlpha2).includes(normalizedQuery)
     )
     setFilteredCountries(filtered)
@@ -165,7 +165,7 @@ export default function CountrySelector() {
     }
 
     const normalizedQuery = normalizeString(query)
-    const filtered = europeanCountrys.filter(
+    const filtered = europeanCountries.filter(
       (country) => normalizeString(country.nome).includes(normalizedQuery) || normalizeString(country.codigoISOAlpha2).includes(normalizedQuery)
     )
 
@@ -289,11 +289,6 @@ export default function CountrySelector() {
         }
         break
       case 17: // Lituânia (9 ou 12 números)
-        // if (vat.length !== 9 && vat.length !== 12) return;
-        // if (!/^\d{9}|\d{12}$/.test(vat)) {
-        //     errorMessages.push('O VAT da Lituânia deve ter 9 ou 12 números. Exemplo: 123456789 ou 123456789012.');
-        // }
-        // break;
         if (vat.length !== 9 && vat.length !== 12) {
           errorMessages.push("O VAT da Lituânia deve ter 9 ou 12 números. Exemplo: 123456789 ou 123456789012.")
         } else if (!/^\d{9}$|^\d{12}$/.test(vat)) {
@@ -331,11 +326,6 @@ export default function CountrySelector() {
         }
         break
       case 23: // Romênia (2 a 10 números)
-        // if (vat.length < 2 || vat.length > 10) return;
-        // if (!/^\d{2,10}$/.test(vat)) {
-        //     errorMessages.push('O VAT da Romênia deve ter entre 2 e 10 números. Exemplo: 123456.');
-        // }
-        // break;
         if (vat.length < 2 || vat.length > 10) {
           errorMessages.push("O VAT da Romênia deve ter entre 2 e 10 números. Exemplo: 12 ou 1211223333.")
         } else if (!/^\d{2,10}$/.test(vat)) {

@@ -1,16 +1,14 @@
-# Country selector and VAT association
+# European VAT Number Validator
 
 ## Overview
 
-**Country Selector and VAT Association** is a tool that allows users to select a country from a dropdown menu and automatically display the corresponding VAT (Value Added Tax) pattern for that country.
-
-This tool is particularly useful for businesses and developers who need to validate VAT numbers based on the selected country.
+This project provides a VAT Number validator for European Union (EU) countries. It includes a UI component for selecting a country and validating a VAT number based on each country's specific format.
 
 ## Features
 
-- **Country Selection** - users can choose a country from a searchable dropdown list (combobox);
-- **VAT Pattern Display** - upon selecting a country, the application shows the VAT pattern that corresponds to that country;
-- **Dynamic Search** - the country list is searchable, and results are dynamically filtered based on user input.
+Country Selector: choose from all EU member states;
+VAT format validation: checks if the VAT number matches the country's expected format;
+Easy integration: can be embedded in any web application.
 
 ## Technologies Used
 
@@ -18,3 +16,9 @@ This tool is particularly useful for businesses and developers who need to valid
 - **JavaScript** - for handling logic and interactions;
 - **HTML/CSS** - for structuring and styling the application;
 - **Node.js** - for backend functionality.
+
+If you wanna clone the repository:
+
+git clone https://github.com/BRp99/country-selector-vat-association.git
+
+If you find any errors or have suggestions for improvement, feel free to contribute or raise an issue!
